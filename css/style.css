@@ -942,3 +942,77 @@ textarea {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+
+
+
+
+
+
+
+/* Centered alert box */
+.alertBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 50rem;
+  padding: 3rem;
+  background-color: #0062b9; /* Matching the theme blue color */
+  color: white; /* White text */
+  text-align: center;
+  border-radius: 8px;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Message inside alert */
+.alertBox p {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+/* Button to close the alert */
+.closeAlertBtn {
+  padding: 1.2rem 3rem;
+  font-size: 1.6rem;
+  background-color: #fff;
+  color: #0062b9;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Button hover effect */
+.closeAlertBtn:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+/* Hidden class to initially hide the alert */
+.hidden {
+  display: none;
+}
+
+/* Responsive: adjust padding and font-size for smaller screens */
+@media only screen and (max-width: 37.5em) {
+  .alertBox {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .alertBox p {
+    font-size: 1.6rem;
+  }
+
+  .closeAlertBtn {
+    padding: 1rem 2.5rem;
+    font-size: 1.4rem;
+  }
+}

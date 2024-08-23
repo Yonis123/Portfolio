@@ -218,8 +218,10 @@
                 Developed and implemented an online multiplayer board game from the Horn of Africa using React, Azure Functions, Cosmos DB, and SignalR. The project focuses on enhancing user experience through real-time interactions and scalable serverless architecture.
                  While the full app is still in development, a demo is currently available.
               </p>
+              <!-- I want to take my person to my actual demo when they click it so for right now let me finish the demo -->
               <a
-                href="./project-1.html"
+                href="";
+                
                 class="btn btn--med btn--theme dynamicBgClr"
                 target="_blank"
                 >See more</a
@@ -265,7 +267,7 @@
           <span class="heading-sec__main heading-sec__main--lt">Contact</span>
         </h2>
         <div class="contact__form-container">
-          <form action="#" class="contact__form">
+          <form action="/send_email" method="POST" class="contact__form">
             <div class="contact__form-field">
               <label class="contact__form-label" for="name">Name</label>
               <input
@@ -364,6 +366,12 @@
         
       </div>
     </footer>
+
+
+    <div id="alertBox" class="alertBox hidden">
+      <p id="alertMessage"></p>
+      <button id="closeAlert" class="closeAlertBtn">Close</button>
+    </div>
 
     <script src="./index.js"></script>
   </body>

@@ -1,38 +1,41 @@
-// ---
-const hamMenuBtn = document.querySelector('.header__main-ham-menu-cont')
-const smallMenu = document.querySelector('.header__sm-menu')
-const headerHamMenuBtn = document.querySelector('.header__main-ham-menu')
-const headerHamMenuCloseBtn = document.querySelector(
-  '.header__main-ham-menu-close'
-)
-const headerSmallMenuLinks = document.querySelectorAll('.header__sm-menu-link')
+const form = document.querySelector('.contact__form');
+const alertBox = document.getElementById('alertBox');
+const alertMessage = document.getElementById('alertMessage');
+const closeAlertBtn = document.getElementById('closeAlert');
 
-hamMenuBtn.addEventListener('click', () => {
-  if (smallMenu.classList.contains('header__sm-menu--active')) {
-    smallMenu.classList.remove('header__sm-menu--active')
-  } else {
-    smallMenu.classList.add('header__sm-menu--active')
-  }
-  if (headerHamMenuBtn.classList.contains('d-none')) {
-    headerHamMenuBtn.classList.remove('d-none')
-    headerHamMenuCloseBtn.classList.add('d-none')
-  } else {
-    headerHamMenuBtn.classList.add('d-none')
-    headerHamMenuCloseBtn.classList.remove('d-none')
-  }
-})
+form.addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent the default form submission
 
-for (let i = 0; i < headerSmallMenuLinks.length; i++) {
-  headerSmallMenuLinks[i].addEventListener('click', () => {
-    smallMenu.classList.remove('header__sm-menu--active')
-    headerHamMenuBtn.classList.remove('d-none')
-    headerHamMenuCloseBtn.classList.add('d-none')
+  const formData = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value,
+  };
+
+  fetch('http://localhost:5000/send_email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
   })
-}
+    .then(response => response.json())
+    .then(data => {
+      // Display the alert box with the response message
+      alertMessage.innerText = data.status;
+      alertBox.classList.remove('hidden');
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alertMessage.innerText = 'An error occurred, please try again later.';
+      alertBox.classList.remove('hidden');
+    });
+});
 
-// ---
-const headerLogoConatiner = document.querySelector('.header__logo-container')
-
-headerLogoConatiner.addEventListener('click', () => {
-  location.href = 'index.html'
-})
+// Close alert when the button is clicked
+closeAlertBtn.addEventListener('click', () => {
+  alertBox.classList.add('hidden');
+  document.getElementById('name').value = "";
+  document.getElementById('email').value = "";
+  document.getElementById('message').value = "";
+});
