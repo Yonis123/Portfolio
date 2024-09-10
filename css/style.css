@@ -379,14 +379,16 @@ textarea {
   height: 56%;
 }
 
-@media only screen and (min-width: 1110px) and (max-width: 1278px) {
+@media only screen and (min-width: 1110px) {
   /* Your styles here */
-  .projects__screen-img--second {
-    height: 48%;
+  .projects__screen-img {
+    height: 22.5vw;
   }
-  /* .projects__screen-img{
-    height: 48%;
-  } */
+  .projects__screen-img--second {
+    height: 20.7vw;
+    top: 3.5vw;
+  }
+ 
 }
 
 @media only screen and (max-width: 75.25em){
