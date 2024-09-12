@@ -1018,3 +1018,52 @@ textarea {
     font-size: 1.4rem;
   }
 }
+
+
+
+
+/* adding hamburger menu */
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95); /* Slight transparency for modern look */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 5px; /* Rounded corners */
+  z-index: 1000; /* Ensure it appears on top */
+}
+
+.dropdown__link {
+  padding: 15px; /* Increased padding for more space */
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.6rem; /* Consistent with your main font size */
+  font-weight: 600; /* Slightly bold for better readability */
+  color: #333;
+  text-align: center;
+  text-transform: uppercase; /* Match the rest of the navigation */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown__link:hover {
+  background-color: #0062b9; /* Your theme's blue color */
+  color: #fff; /* White text on hover */
+}
+
+.d-none {
+  display: none;
+}
+
+.header__main-ham-menu, .header__main-ham-menu-close {
+  cursor: pointer;
+  width: 3rem; /* Resize to make the hamburger icon more compact */
+  transition: transform 0.3s; /* Smooth animation on click */
+}
+
+.header__main-ham-menu:hover, .header__main-ham-menu-close:hover {
+  transform: scale(1.1); /* Slight scaling on hover */
+}

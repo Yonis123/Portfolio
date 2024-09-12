@@ -39,3 +39,22 @@ closeAlertBtn.addEventListener('click', () => {
   document.getElementById('email').value = "";
   document.getElementById('message').value = "";
 });
+
+
+const hamMenu = document.querySelector('.header__main-ham-menu');
+const hamMenuClose = document.querySelector('.header__main-ham-menu-close');
+const dropdown = document.querySelector('.dropdown');
+
+hamMenu.addEventListener('click', () => {
+  dropdown.style.display = 'flex';
+  hamMenu.classList.add('d-none');
+  hamMenuClose.classList.remove('d-none');
+});
+
+
+
+hamMenuClose.addEventListener('click', () => {
+  dropdown.style.display = 'none';
+  hamMenu.classList.remove('d-none');
+  hamMenuClose.classList.add('d-none');
+});
