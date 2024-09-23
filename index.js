@@ -12,7 +12,7 @@ form.addEventListener('submit', function (event) {
     message: document.getElementById('message').value,
   };
 
-  fetch('http://localhost:5000/send_email', {
+  fetch('https://yonis123.github.io/Portfolio/send_email', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

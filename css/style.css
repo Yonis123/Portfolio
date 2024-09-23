@@ -379,6 +379,7 @@ textarea {
   height: 56%;
 }
 
+
 @media only screen and (min-width: 1110px) {
   /* Your styles here */
   .projects__screen-img {
@@ -432,6 +433,30 @@ textarea {
     width: 70.4%;
     height: 73%;
   }
+}
+
+@media only screen and (min-width: 1358px) {
+  /* Your styles here */
+  .projects__screen-img {
+    height: 307px;
+  }
+  .projects__screen-img--second {
+    height: 300px;
+    top: 48px;
+  }
+ 
+}
+
+@media only screen and (min-width: 1800px) {
+  /* Your styles here */
+  .projects__screen-img {
+    height: 317px;
+  }
+ .projects__screen-img--second {
+    height: 300px;
+    top: 48px;
+  }
+ 
 }
 
 .projects__row:last-child {
